@@ -1,36 +1,112 @@
-# CloudBerry - Hybrid Selenium to BDD (Cucumber) Framework
+# 🛒 Cloudberry Store BDD Automation Framework
 
-## What’s included
-- Your existing **Hybrid framework core** reused:
-  - `testBase.BaseClass` (ThreadLocal driver, openApp/closeApp, screenshots)
-  - All `pageObjects.*`
-- Converted to **BDD**:
-  - 6 Feature files (TC01..TC06)
-  - Step Definitions
-  - Hooks (Before/After) integrated with BaseClass
-  - TestNG-based Cucumber Runner
-- **Extent Reports (Spark)** with Cucumber 7 Adapter
+A Behavior-Driven Development (BDD) test automation framework designed for the Cloudberry Store application. This project leverages modern testing tools and best practices to ensure scalable, maintainable, and readable test automation.
 
-## How to run
-From project root:
+---
 
-```bash
-mvn test -Dos=windows -Dbrowser=chrome
+## 🚀 Tech Stack
+
+* **Java**
+* **Selenium WebDriver**
+* **Cucumber (BDD)**
+* **TestNG**
+* **Maven**
+* **Page Object Model (POM)**
+* **Gherkin (Feature Files)**
+
+---
+
+## 📌 Key Features
+
+* ✅ BDD framework using **Cucumber** with Gherkin syntax
+* ✅ Scalable design using **Page Object Model (POM)**
+* ✅ Clean separation of **test logic and test data**
+* ✅ Supports **data-driven testing**
+* ✅ Cross-browser test execution capability
+* ✅ Reusable utility functions for common actions
+* ✅ Detailed test reports
+
+---
+
+## 📂 Project Structure
+
+```
+Cloudberry-Store-BDD-Framework
+│── src/test/java
+│   ├── stepDefinitions      # Step definition classes
+│   ├── pageObjects          # Page Object classes
+│   ├── runners              # Test runners (TestNG/Cucumber)
+│   ├── utilities            # Utility/helper classes
+│
+│── src/test/resources
+│   ├── features             # Gherkin feature files
+│   ├── config               # Configuration files
+│
+│── pom.xml                  # Maven dependencies
+│── testng.xml               # TestNG configuration
 ```
 
-Defaults:
-- os=windows
-- browser=chrome
+---
 
-Update credentials in:
-`src/test/resources/config.properties`
+## 🧪 How to Run Tests
 
-## Reports
-- Cucumber HTML: `target/cucumber-report.html`
-- Extent Spark: `target/ExtentReport/ExtentSpark.html`
+### 🔧 Prerequisites
 
-## Notes
-- `config.properties` uses:
-  - `execution_env=local`
-  - `appURL=https://demo.nopcommerce.com/`
-- If you run remote execution, update BaseClass settings + any grid URL needed.
+* Java (JDK 8 or higher)
+* Maven installed
+* IDE (IntelliJ / Eclipse recommended)
+
+---
+
+### ▶️ Run via Maven
+
+```bash
+mvn clean test
+```
+
+---
+
+### ▶️ Run via TestNG
+
+* Right-click on `testng.xml`
+* Select **Run As → TestNG Suite**
+
+---
+
+## 📊 Reporting
+
+* Cucumber HTML Reports are generated after test execution
+* Reports provide:
+
+  * Step-by-step execution details
+  * Pass/Fail status
+  * Screenshots (if configured)
+
+---
+
+## 🧩 Design Pattern
+
+This framework follows:
+
+* **Page Object Model (POM)** → Improves maintainability
+* **BDD (Cucumber)** → Enhances readability for non-technical stakeholders
+* **Modular Architecture** → Easy to extend and scale
+
+---
+
+## ✍️ Sample Feature File
+
+```gherkin
+Feature: Login Functionality
+
+  Scenario: Valid user login
+    Given User is on login page
+    When User enters valid credentials
+    Then User should be logged in successfully
+```
+
+
+
+
+
+⭐ If you find this project useful, don’t forget to star the repository!
