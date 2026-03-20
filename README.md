@@ -105,8 +105,3 @@ Feature: Login Functionality
     Then User should be logged in successfully
 ```
 
-
-
-
-
-⭐ If you find this project useful, don’t forget to star the repository!
